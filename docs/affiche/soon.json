@@ -1,0 +1,16 @@
+{
+    "items": [{
+        "movieName": "Мулан",
+        "filmbaseId": 1644,
+        "movieDuration": "115",
+        "moviePremiere": [{
+            "label": "3D",
+            "date": "01.07.2020"
+        }],
+        "mpaa": "6+",
+        "movieGenreText": "Драма, Боевик, Фэнтези",
+        "movieCountryText": "США",
+        "movieActorText": "Лю Ифэй, Донни Йен, Джет Ли, Гун Ли, Джейсон Скотт Ли, Йосон Ан, Нельсон Ли, Джан Ю, Джимми Вонг, Доа Моа",
+        "movieImagePathMiddle": "1644_mid_9365.jpg"
+    }]
+}

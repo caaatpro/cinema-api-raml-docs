@@ -1,0 +1,23 @@
+
+/:
+    declaration: Новости
+
+    get:
+        description: Список новостей
+        responses:
+            200:
+                body:
+                    application/json:
+                    example: !include news.json
+
+/{id}/:
+    get:
+        description: Содержимое новости
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include id.json
+
+            404:
+                description: Новость не найдена

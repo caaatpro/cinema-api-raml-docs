@@ -1,0 +1,114 @@
+#%RAML 1.0
+
+description: Информация о фильме
+
+/{id}/:
+    uriParameters:
+        id:
+            type: integer
+            description: ID фильма
+            minLength: 1
+            maxLength: 10
+
+    get:
+        responses:
+            200:
+                description:
+                    filmbaseId - ID фильма <br>
+                    movieName - Название фильма <br>
+                    movieYear - Год премьеры фильма <br>
+                    movieImagePathSmall - Название файла постера фильма в малом размере (полный путь)<br>
+                    movieImagePathMiddle - Название файла постера фильма в среднем размере (полный путь)<br>
+                    movieImagePathBig - Название файла постера фильма в большом размере (полный путь)<br>
+                    movieActorText - Актёры фильма через запятую <br>
+                    movieGenreText - Жанры фильма через запятую <br>
+                    movieCountryText - Страны фильма через запятую <br>
+                    movieDescription - Текст описания фильма <br>
+                    movieDuration - Продолжительность фильма в секундах <br>
+                    memorandumStartDate - Дата начала меморандума на фильм <br>
+                    memorandumEndDate - Дата окончания меморандума на фильм <br>
+                    movieDirectorText - Режиссёры фильма через запятую <br>
+                    movieProducerText - Продюсеры фильма через запятую <br>
+                    movieWritersText - Сценаристы фильма через запятую <br>
+                    mpaa - Возрастное ограничение согласно Федеральному закону «О защите детей от информации, причиняющей вред их здоровью и развитию» <br>
+                    kinopoiskId - ID фильма на сайте КиноПоиск (www.kinopoisk.ru) <br>
+                    commentsCount - Количество отзывов к фильму на сайте <br>
+                    trailer - Информация о трейлере фильма <br>
+                    trailer.lq - Ссылка на трейлер фильма в качестве 360p <br>
+                    trailer.hq - Ссылка на трейлер фильма в качестве 720p <br>
+                    trailer.image - Ссылка на изображение трейлера фильма<br>
+                    moviePremiere - Массив дат премьер фильма <br>
+                    moviePremiere.label - Название формата фильма<br>
+                    moviePremiere.date - Дата премьеры фильма <br>
+                    rating.kp.vote - количество голосов на сайте Кинопоиск <br>
+                    rating.kp.value - рейтинг на сайте IMDB <br>
+                    rating.imdb.vote - количество голосов на сайте IMDB <br>
+                    rating.imdb.value - рейтинг на сайте Кинопоиск<br>
+
+                body:
+                    application/json:
+                        example: !include id.json
+
+            404:
+                description: Фильм не найден
+
+/{id}/comments/:
+        get:
+            description: Комментарии к фильму
+            queryParameters:
+                offset:
+                    description: Сколько комментариев пропустить
+                    type:        integer
+                    required:    false
+                    default:     0
+                    example:     10
+                limit:
+                    description: Сколько комментариев вернуть
+                    required:    false
+                    type:        integer
+                    minimum:     10
+                    maximum:     200
+                    default:     30
+                    example:     50
+
+            responses:
+                200:
+                    description:
+                        total - Количество комментариев к фильму <br>
+                        offset - Сколько комментариев пропустить (из параметров запроса)<br>
+                        limit - Сколько комментариев вернуть (из параметров запроса) <br>
+                        comments - Массив комментариев
+                        comments.id - ID комментариев
+                        comments.parentId - ID родительского комментария
+                        comments.date - Дата и время размещения комментария <br>
+                        comments.likes - Количество лайков комментария <br>
+                        comments.dislikes - Количество дизлайков (противоположность лайку) комментария <br>
+                        comments.text - Текст комментария <br>
+                        comments.user - Информация о пользователе оставившем комментарий <br>
+                        comments.user.gender - Пол пользователя (null - если пользователь не зарегистрирован) <br>
+                        comments.user.id - ID пользователя <br>
+                        comments.user.name - Имя пользователя (имя пользователя из профиля пользователя если зарегистрирован, иначе значение указанное при размещение комментария) <br>
+                        comments.user.email - Email пользователя (null если зарегистрирован, иначе значение указанное при размещение комментария) <br>
+                    body:
+                        application/json:
+                            example: !include comments.json
+
+        post:
+            description: Написать комментарий
+            queryParameters:
+                name:
+                    description: Имя автора
+                    type:        string
+                    required:    true
+                mail:
+                    description: Email автора
+                    type:        string
+                    required:    true
+                text:
+                    description: Текст сообщения
+                    type:        string
+                    required:    true
+                g-recaptcha-response:
+                    description: Капча
+                    type:        string
+                    required:    true

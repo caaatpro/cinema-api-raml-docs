@@ -1,0 +1,37 @@
+declaration: Баннеры
+
+/mobile/:
+    get:
+        description: Возвращает список баннеров для мобильной версии сайт
+        responses:
+            200:
+                description:
+                    duration - Время отображения баннера (секунды) <br>
+                    banners - Массив баннеров <br>
+                    image - Изображение баннера (полный путь) <br>
+                    title - Отображаемое название баннера <br>
+                    alt - Описание изображения баннера <br>
+                    link - Ссылка баннера <br>
+                    target - Признак открытия в новом окне <br>
+                    position - ID области отображения баннера <br>
+                body:
+                    application/json:
+                        example: !include mobile.json
+
+/desktop/:
+    get:
+        description: Возвращает список баннеров для десктопной версии сайта
+        responses:
+            200:
+                description:
+                    duration - Время отображения баннера (секунды) <br>
+                    banners - Массив баннеров <br>
+                    image - Изображение баннера (полный путь) <br>
+                    title - Отображаемое название баннера <br>
+                    alt - Описание изображения баннера <br>
+                    link - Ссылка баннера <br>
+                    target - Признак открытия в новом окне <br>
+                    position - ID области отображения баннера <br>
+                body:
+                    application/json:
+                        example: !include desktop.json

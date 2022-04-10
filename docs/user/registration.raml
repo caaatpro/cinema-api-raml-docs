@@ -1,0 +1,72 @@
+/:
+    post:
+        description: Регистрация
+        queryParameters:
+            email:
+                description: Email пользователя
+                type:        string
+                required:    true
+            password:
+                description: Пароль
+                type:        password
+                required:    true
+            password2:
+                description: Подтверждение пароля
+                type:        password
+                required:    true
+            user_name:
+                description: Ник
+                type:        string
+                required:    true,
+                example:     "nik"
+            user_phone:
+                description: Телефон
+                type:        string
+                required:    false
+                example:     "+71111111111"
+            user_bdate:
+                description: Дата рождения
+                type:        string
+                required:    false
+                example:     "01.02.2002"
+            user_last_name:
+                description: Фамилия
+                type:        string
+                required:    false
+                example:     "Кто-тов"
+            user_first_name:
+                description: Имя
+                type:        string
+                required:    false
+                example:     "Кто-то"
+            user_middle_name:
+                description: Отчество
+                type:        string
+                required:    false
+                example:     "Кто-то-вич"
+            user_gender:
+                description: Пол
+                type:        number
+                required:    true
+                example:     0
+            g-recaptcha-response:
+                description: Капча
+                type:        string
+                required:    true
+        responses:
+            200:
+                headers:
+                    Set-Cookie:
+                        type: string
+                        example: -
+                description:
+                    Успешная авторизация
+                body:
+                    application/json:
+                        example: {}
+            400:
+                description:
+                    Ошибка регистрации
+                body:
+                    application/json:
+                        example: !include ../error.json

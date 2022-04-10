@@ -1,0 +1,20 @@
+{
+    "duration": 60,
+    "banners": [{
+            "title": "Узнать подробнее о печенье",
+            "alt": "Реклама печенья",
+            "link": "https://tstbarguzin2.dev.nikolas.ru/",
+            "target": true,
+            "image": "https://tstbarguzin2.dev.nikolas.ru/posters/megaposter_3837_3910.jpg",
+            "position": 1
+        },
+        {
+            "title": "Узнать подробнее о попкорне",
+            "alt": "Реклама попкорна",
+            "link": "https://tstbarguzin2.dev.nikolas.ru/dfsdf",
+            "target": false,
+            "image": "https://tstbarguzin2.dev.nikolas.ru/posters/megaposter_37_3910.jpg",
+            "position": 4
+        }
+    ]
+}

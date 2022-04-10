@@ -1,0 +1,14 @@
+description: Список залов
+
+/:
+    get:
+        responses:
+            200:
+                description:
+                    halls - Массив залов <br>
+                    id - ID зала <br>
+                    title - Наименование зала <br>
+                    plan - Полный путь до файл плана зала
+                body:
+                    application/json:
+                        example: !include halls.json

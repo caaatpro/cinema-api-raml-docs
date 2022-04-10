@@ -1,0 +1,29 @@
+description: Слайды
+
+/:
+    get:
+        description: Список слайдов
+        responses:
+            200:
+                description:
+                    slides - Массив слайдов<br>
+                    withSeances - Признак наличия сеансов у фильма <br>
+                    premiere - Массив дат премьер фильма <br>
+                    premiere.label - Название формата фильма<br>
+                    premiere.date - Дата премьеры фильма <br>
+                    movie - Информация о фильме <br>
+                    movie.filmbaseId - ID фильма <br>
+                    movie.name - Название фильма <br>
+                    movie.mpaa - Возрастное ограничение согласно Федеральному закону «О защите детей от информации, причиняющей вред их здоровью и развитию» <br>
+                    movie.genreText - Жанры фильма через запятую <br>
+                    movie.trailer - Информация о трейлере фильма <br>
+                    movie.trailer.lq - Ссылка на трейлер фильма в качестве 360p <br>
+                    movie.trailer.hq - Ссылка на трейлер фильма в качестве 720p <br>
+                    movie.trailer.image - Ссылка на изображение трейлера фильма<br>
+                    image - Изображения слайда <br>
+                    image.small - Малая версия изображения, для мобильной версии (полный путь)<br>
+                    image.big - Большая версия изображения, для декстопной версии (полный путь)<br>
+
+            body:
+                application/json:
+                    example: slides.json

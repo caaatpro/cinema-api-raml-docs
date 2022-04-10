@@ -1,0 +1,114 @@
+#%RAML 1.0
+
+description: Список фильмов идущих, прошедших и запланированных к показу в кинотеатре
+
+/:
+  get:
+    description: Список фильмов идущих в кинотеатре (есть сеансы) сгруппированных по дате
+
+    responses:
+      200:
+        description:
+          30.02.2020 - Массив фильмов с привязкой к дате <br>
+          minPrice - Минимальная цена доступного сеанса фильма на этот день <br>
+          movie.name - Название фильма <br>
+          movie.filmbaseId - ID фильма <br>
+          movie.mpaa - Возрастное ограничение согласно Федеральному закону «О защите детей от информации, причиняющей вред их здоровью и развитию» <br>
+          movie.genreText - Жанры фильма через запятую <br>
+          movie.countryText - Страны фильма через запятую <br>
+          movie.actorText - Актёры фильма через запятую <br>
+          movie.imagePathSmall - Название файла постера фильма в малом размере (полный путь)<br>
+          movie.imagePathMiddle - Название файла постера фильма в среднем размере (полный путь)<br>
+          movie.imagePathBig - Название файла постера фильма в большом размере (полный путь)<br>
+          movie.duration - Продолжительность фильма в секундах <br>
+          movie.premiere - Массив дат премьер фильма <br>
+          movie.premiere.label - Название формата фильма<br>
+          movie.premiere.date - Дата премьеры фильма <br>
+          movie.trailer - Информация о трейлере фильма <br>
+          movie.trailer.lq - Ссылка на трейлер фильма в качестве 360p <br>
+          movie.trailer.hq - Ссылка на трейлер фильма в качестве 720p <br>
+          movie.trailer.image - Ссылка на изображение трейлера фильма<br>
+        body:
+          application/json:
+            example: !include affiche.json
+
+/soon/:
+  get:
+    description: Список фильмов "скоро в кино"
+    responses:
+      200:
+        description:
+          items - Массив <br>
+          movieName - Название фильма <br>
+          filmbaseId - ID фильма <br>
+          mpaa - Возрастное ограничение согласно Федеральному закону «О защите детей от информации, причиняющей вред их здоровью и развитию» <br>
+          movieGenreText - Жанры фильма через запятую <br>
+          movieCountryText - Страны фильма через запятую <br>
+          movieActorText - Актёры фильма через запятую <br>
+          movieImagePathMiddle - Название файла постера фильма в среднем размере (полный путь)<br>
+          movieDuration - Продолжительность фильма в секундах <br>
+          moviePremiere - Массив дат премьер фильма <br>
+          moviePremiere.label - Название формата фильма<br>
+          moviePremiere.date - Дата премьеры фильма <br>
+        body:
+          application/json:
+            example: !include soon.json
+
+/archive/:
+  get:
+    description: Список годов архивных фильмов
+    responses:
+      200:
+        description:
+          items - Массив годов<br>
+          пустой массив если нет годов
+        body:
+          application/json:
+            example: !include archive.json
+
+/archive/{year}/:
+  uriParameters:
+    year:
+      type: integer
+      description: Год
+      required: true
+  get:
+    description: Список месяце в котором есть архивные фильмы
+    responses:
+      200:
+        description:
+          items - Массив месяцев указанного года<br>
+          пустой массив если нет месяцев
+        body:
+          application/json:
+            example: !include year.json
+
+/archive/{month}/:
+  uriParameters:
+    month:
+      type: integer
+      description: Номер месяца
+      required: true
+  get:
+    description: Список архивных фильмов на выбранный год и месяц
+    responses:
+      200:
+        description:
+          items - Массив <br>
+          пустой Массив в случае отсутствия фильмов<br>
+          movieName - Название фильма <br>
+          filmbaseId - ID фильма <br>
+          mpaa - Возрастное ограничение согласно Федеральному закону «О защите детей от информации, причиняющей вред их здоровью и развитию» <br>
+          movieGenreText - Жанры фильма через запятую <br>
+          movieCountryText - Страны фильма через запятую <br>
+          movieActorText - Актёры фильма через запятую <br>
+          movieImagePathSmall - Название файла постера фильма в малом размере (полный путь)<br>
+          movieImagePathMiddle - Название файла постера фильма в среднем размере (полный путь)<br>
+          movieImagePathBig - Название файла постера фильма в большом размере (полный путь)<br>
+          movieDuration - Продолжительность фильма в секундах <br>
+          moviePremiere - Массив дат премьер фильма <br>
+          moviePremiere.label - Название формата фильма<br>
+          moviePremiere.date - Дата премьеры фильма <br>
+        body:
+          application/json:
+            example: !include month.json

@@ -1,0 +1,11 @@
+{
+    "seances": [{
+        "sessionId": 88031,
+        "minPrice": 250,
+        "formatId": 1,
+        "formatName": "2D",
+        "allowSales": 1,
+        "date": "20.05.2020 12:30",
+        "hallId": 3
+    }]
+}

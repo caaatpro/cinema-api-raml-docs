@@ -1,0 +1,18 @@
+{
+  "name": "cinema-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Andrew Rudykh <caaatpro@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp watch",
+    "docs": "raml2html --theme raml2html-default-theme docs/index.raml > docs/index.html"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "raml2html": "^7.5.0",
+    "raml2html-default-theme": "^2.9.3",
+    "raml2html-slate-theme": "^2.6.0"
+  }
+}

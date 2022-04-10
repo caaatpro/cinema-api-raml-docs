@@ -1,0 +1,40 @@
+#%RAML 1.0
+title: Cinema REST API
+version: 1 (17.06.2020)
+baseUri: https://tstbarguzin2.dev.nikolas.ru/api/v1/
+securitySchemes:
+    cookie-auth:
+        description: |
+            Авторизация должна происходить как в старой версии сайта, через куки/сессию. JSESSIONID - название для примера.
+        type:
+            x-custom
+        describedBy:
+            headers:
+                Cookie:
+                    description: |
+                        JSESSIONID
+                    type: string
+
+/affiche: !include affiche/index.raml
+
+/films: !include films/index.raml
+
+/seances: !include seances/index.raml
+
+/halls: !include halls/index.raml
+
+/faq: !include faq/index.raml
+
+/pages: !include pages/index.raml
+
+/news: !include news/index.raml
+
+/promotions: !include promotions/index.raml
+
+/banners: !include banners/index.raml
+
+/slides: !include slides/index.raml
+
+/purchases: !include purchases/index.raml
+
+/user: !include user/index.raml

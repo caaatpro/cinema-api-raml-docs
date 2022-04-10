@@ -1,0 +1,24 @@
+{
+    "slides": [{
+        "withSeances": true,
+        "premiere": [{
+            "label": "3D",
+            "date": "20.04.2020"
+        }],
+        "movie": {
+            "filmbaseId": 1644,
+            "name": "Мулан",
+            "mpaa": "6+",
+            "genreText": "Мультфильм, Мюзикл, Фэнтези, Комедия, Приключения, Семейный",
+            "trailer": {
+                "lq": "http://mediaserver.etobilet.ru/upload/movie/trailer/mp4/TRR_720_original_filename_3664_7594_lq.mp4",
+                "hq": "http://mediaserver.etobilet.ru/upload/movie/trailer/mp4/TRR_720_original_filename_3664_7594_hq.mp4",
+                "image": "http://mediaserver.etobilet.ru/upload/movie/trailer/img/image_3664_5970.jpg"
+            }
+        },
+        "image": {
+            "small": "https://tstbarguzin2.dev.nikolas.ru/posters/megaposter_3837_3910.jpg",
+            "big": "https://tstbarguzin2.dev.nikolas.ru/posters/megaposter_3837_3910.jpg"
+        }
+    }]
+}

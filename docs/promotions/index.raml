@@ -1,0 +1,23 @@
+
+/:
+    declaration: Акции
+
+    get:
+        description: Список акций
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include promotions.json
+
+/{id}/:
+    get:
+        description: Содержимое акции
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include id.json
+
+            404:
+                description: Акция не найдена

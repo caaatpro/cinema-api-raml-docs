@@ -1,0 +1,12 @@
+{
+    "emails": {
+        "current": {
+            "value": "current@email.com",
+            "status": true
+        },
+        "new": {
+            "value": "new@email.com",
+            "status": false
+        }
+    }
+}

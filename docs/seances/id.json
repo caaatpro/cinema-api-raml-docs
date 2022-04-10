@@ -1,0 +1,37 @@
+{
+    "saleReservationId": null,
+    "quickHash": null,
+    "session": {
+        "id": 88031,
+        "date": "20.05.2020 18:30",
+        "minPrice": 250,
+        "formatId": 1,
+        "formatName": "2D",
+        "allowSales": 1
+    },
+    "movie": {
+        "filmbaseId": 1623,
+        "name": "Лёд 2",
+        "mpaa": "6+"
+    },
+    "payTypes": [{
+            "id": 1,
+            "title": "Банковской картой"
+        },
+        {
+            "id": 2,
+            "title": "Google Pay"
+        }
+    ],
+    "hallId": 3,
+    "places": [{
+        "level": 3,
+        "fragment": 0,
+        "row": 1,
+        "num": 1,
+        "status": 1,
+        "price": 250,
+        "type": 0,
+        "offline": 0
+    }]
+}

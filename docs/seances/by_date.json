@@ -1,0 +1,16 @@
+{
+    "seances": [{
+        "sessionId": 88031,
+        "minPrice": 250,
+        "formatId": 1,
+        "formatName": "2D",
+        "allowSales": 1,
+        "date": "20.05.2020 11:50",
+        "hallId": 3,
+        "movie": {
+            "filmbaseId": 1623,
+            "name": "Лёд 2",
+            "mpaa": "6+"
+        }
+    }]
+}

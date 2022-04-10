@@ -1,0 +1,22 @@
+
+/:
+    declaration: Страницы сайта
+
+    get:
+        description: Список страниц сайта
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include pages.json
+
+/{id}/:
+        get:
+            description: Содержимое страницы
+            responses:
+                200:
+                    body:
+                        application/json:
+                            example: !include id.json
+                404:
+                    description: Страница не найдена

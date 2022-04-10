@@ -1,0 +1,40 @@
+{
+    "filmbaseId": 241,
+    "movieName": "Звёздные войны: Пробуждение силы",
+    "movieYear": 2015,
+    "movieImagePathSmall": "https://tstbarguzin2.dev.nikolas.ru/posters/__post_Osn_000_movie_image_path_small_824_9295.jpg",
+    "movieImagePathMiddle": "https://tstbarguzin2.dev.nikolas.ru/posters/__post_Osn_000_movie_image_path_middle_824_5021.jpg",
+    "movieImagePathBig": "https://tstbarguzin2.dev.nikolas.ru/posters/__post_Osn_000_movie_image_path_big_824_9779.jpg",
+    "movieActorText": "Джон Бойега, Дэйзи Ридли, Оскар Айзек, Адам Драйвер, Донал Глисон, Харрисон Форд, Марк Хэмилл, Кэрри Фишер, Макс фон Сюдов, Энди Серкис",
+    "movieGenreText": "боевик, приключения, фантастика, фэнтези",
+    "movieCountryText": "США",
+    "movieDescription": "Новый эпизод космической саги «Звёздные Войны: Пробуждение Силы» объединит знакомых всем поклонникам персонажей и новых героев, расскажет о новых мирах и новых приключениях. События фильма разворачиваются через 30 лет после «Возвращения Джедая». В Галактике уже давно не было войн и раздоров, но новая опасность уже близка -  пробудилась Темная сила и использовать ее хотят некоторые злые личности в своих коварных целях. Сражение не за горами. Нужно защитить свою планету, а разрушение ее повлечет за собой крах и других планет..",
+    "movieDuration": "136",
+    "memorandumEndDate": "",
+    "memorandumStartDate": "",
+    "movieDirectorText": "Джей Джей Абрамс",
+    "movieProducerText": "Джей Джей Абрамс, Брайан Берк, Кэтлин Кеннеди",
+    "movieWritersText": "Джей Джей Абрамс, Лоуренс Кэздан, Джордж Лукас",
+    "mpaa": "12+",
+    "kinopoiskId": null,
+    "commentsCount": 13,
+    "moviePremiere": [{
+        "label": "3D",
+        "date": "14.04.2020"
+    }],
+    "trailer": {
+        "lq": "http://mediaserver.etobilet.ru/upload/movie/trailer/mp4/Zvjozdnye_vojny__VII_2_trejler_original_filename_782_9231_lq.mp4",
+        "hq": "http://mediaserver.etobilet.ru/upload/movie/trailer/mp4/Zvjozdnye_vojny__VII_2_trejler_original_filename_782_9231_hq.mp4",
+        "image": "http://mediaserver.etobilet.ru/upload/movie/trailer/img/post_tr_Star_War_7_Jamm_2__image_782_7235.jpg"
+    },
+    "rating": {
+        "kp": {
+            "vote": 14610,
+            "value": 5.334
+        },
+        "imdb": {
+            "vote": 21921,
+            "value": 4.8
+        }
+    }
+}

@@ -1,0 +1,92 @@
+#%RAML 1.0
+
+description: Расписание кинотеатра
+
+/:
+    get:
+        responses:
+            200:
+                description: Список дат сеансов
+                body:
+                    application/json:
+                        example: !include seances.json
+
+/by_film/:
+    get:
+        description:
+            Сеансы фильма
+        queryParameters:
+            film:
+                description: ID фильма
+                type:        integer
+                required:    true
+                example:     1613
+
+        responses:
+            200:
+                description:
+                    seances - Массив сеансов<br>
+                    sessionId - ID сеансы <br>
+                    minPrice - минимальная цена доступного сеанса фильма на этот день <br>
+                    formatId - ID формата фильма<br>
+                    formatName - Наименование формата фильма<br>
+                    allowSales - Разрешена ли покупка<br>
+                    date - Дата и время сеанса<br>
+                    hallId - ID зала<br>
+                body:
+                    application/json:
+                        example: !include by_film.json
+
+            404:
+                description: Фильм не найден
+
+/by_date/:
+    get:
+        description:
+            Сеансы на указанную дату
+        queryParameters:
+            date:
+                description: Дата
+                type:        string
+                required:    true
+                example:     "20.05.2020"
+
+        responses:
+            200:
+                description:
+                    seances - Массив сеансов<br>
+                    sessionId - ID сеансы <br>
+                    minPrice - Минимальная цена доступного сеанса фильма на этот день <br>
+                    formatId - ID формата фильма<br>
+                    formatName - Наименование формата фильма<br>
+                    allowSales - Разрешена ли покупка<br>
+                    date - Дата и время сеанса<br>
+                    hallId - ID зала<br>
+                    movie - Информация о фильме<br>
+                    movie.filmbaseId - ID фильма<br>
+                    movie.name - Название фильма <br>
+                    movie.mpaa - Возрастное ограничение согласно Федеральному закону «О защите детей от информации, причиняющей вред их здоровью и развитию»
+                body:
+                    application/json:
+                        example: !include by_date.json
+
+/{id}/:
+    get:
+        description: Информация о сеансе
+        responses:
+            200:
+                description:
+                    saleReservationId - <br>
+                    quickHash - <br>
+                    session - Информация о сеансе <br>
+                    movie - Информация о фильме<br>
+                    payTypes - Массив доступных способов оплаты <br>
+                    hallId - ID зала<br>
+                    places - Массив мест
+
+                body:
+                    application/json:
+                        example: !include id.json
+
+            404:
+                description: Сеанс не найден

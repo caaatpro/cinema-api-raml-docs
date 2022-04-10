@@ -1,0 +1,27 @@
+description: Покупки
+
+/:
+    get:
+        description: Список покупок
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include purchases.json
+
+    post:
+        description: Создание резерва
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include purchases_post.json
+
+/{id}/:
+    put:
+        description: Изменение резерва
+        responses:
+            200:
+            body:
+                application/json:
+                example: !include id_put.json

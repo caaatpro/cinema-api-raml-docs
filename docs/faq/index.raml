@@ -1,0 +1,71 @@
+
+/:
+    declaration: Вопроса ответ
+
+    get:
+        description: Постранично получить вопросы
+        queryParameters:
+            page:
+                description: Номер страницы
+                type:        integer
+                required:    false
+                example:     1
+            per_page:
+                description: Количество записей на страницу
+                required:    false
+                type:        integer
+                minimum:     10
+                maximum:     200
+                default:     30
+                example:     50
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include faq.json
+
+    post:
+        description: Задать вопрос
+        queryParameters:
+            to:
+                description: Кому (Вопрос администрации кинотеатра, Вопрос службе поддержки on-line продаж)
+                type:        integer
+                required:    true
+                example:     1
+            name:
+                description: Имя автора
+                type:        string
+                required:    true
+            mail:
+                description: Email автора
+                type:        string
+                required:    true
+            text:
+                description: Текст сообщения
+                type:        string
+                required:    true
+            g-recaptcha-response:
+                description: Капча
+                type:        string
+                required:    true
+
+/{id}/:
+    post:
+        description: Ответить на вопрос
+        queryParameters:
+            name:
+                description: Имя автора
+                type:        string
+                required:    true
+            mail:
+                description: Email автора
+                type:        string
+                required:    true
+            text:
+                description: Текст сообщения
+                type:        string
+                required:    true
+            g-recaptcha-response:
+                description: Капча
+                type:        string
+                required:    true

@@ -1,0 +1,24 @@
+{
+    "halls": [
+        {
+            "id": 11,
+            "title": "Зал IMAX",
+            "plan": "https://tstbarguzin2.dev.nikolas.ru/halls/hall_11.json"
+        },
+        {
+            "id": 2,
+            "title": "Зал №2",
+            "plan": "https://tstbarguzin2.dev.nikolas.ru/halls/hall_2.json"
+        },
+        {
+            "id": 3,
+            "title": "Зал №3",
+            "plan": "https://tstbarguzin2.dev.nikolas.ru/halls/hall_3.json"
+        },
+        {
+            "id": 4,
+            "title": "Зал №4",
+            "plan": "https://tstbarguzin2.dev.nikolas.ru/halls/hall_4.json"
+        }
+    ]
+}

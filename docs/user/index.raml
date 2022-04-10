@@ -1,0 +1,303 @@
+/:
+    get:
+        description: Данные пользователя
+        securedBy: [cookie-auth]
+        responses:
+            200:
+                description:
+                    halls - Массив залов <br>
+                    id - ID зала <br>
+                    title - Наименование зала <br>
+                    plan - Полный путь до файл плана зала
+                body:
+                    application/json:
+                        example: !include halls.json
+            401:
+                description:
+                    Пользователь не авторизован
+
+    put:
+        description: Изменение данных пользователя
+        securedBy: [cookie-auth]
+        queryParameters:
+            user_name:
+                description: Ник
+                type:        string
+                required:    true,
+                example:     "nik"
+            user_phone:
+                description: Телефон
+                type:        string
+                required:    false
+                example:     "+71111111111"
+            user_bdate:
+                description: Дата рождения
+                type:        string
+                required:    false
+                example:     "01.02.2002"
+            user_last_name:
+                description: Фамилия
+                type:        string
+                required:    false
+                example:     "Кто-тов"
+            user_first_name:
+                description: Имя
+                type:        string
+                required:    false
+                example:     "Кто-то"
+            user_middle_name:
+                description: Отчество
+                type:        string
+                required:    false
+                example:     "Кто-то-вич"
+            user_gender:
+                description: Пол
+                type:        number
+                required:    true
+                example:     0
+        responses:
+            200:
+                description:
+                    Данные успешно изменены
+            400:
+                description:
+                    Ошибка изменения данных
+                body:
+                    application/json:
+                        example: !include ../error.json
+            401:
+                description:
+                    Пользователь не авторизован
+
+/email/:
+    get:
+        description: Статус смены email
+        securedBy: [cookie-auth]
+        responses:
+            200:
+                description:
+                    emails.current.value - Текущий email <br>
+                    emails.current.status - Статус подтверждения текущего email <br>
+                    emails.new.value - Новый email (может принимать значение - null) <br>
+                    emails.new.status - Статус подтверждения нового email <br>
+
+                body:
+                    application/json:
+                        example: !include email.json
+            401:
+                description:
+                    Пользователь не авторизован
+    put:
+        description: Изменение email пользователя
+        securedBy: [cookie-auth]
+        queryParameters:
+            email:
+                description: Email пользователя
+                type:        string
+                required:    true
+        responses:
+            200:
+                description:
+                    Данные успешно изменены
+            400:
+                description:
+                    Ошибка изменения данных
+                body:
+                    application/json:
+                        example: !include ../error.json
+            401:
+                description:
+                    Пользователь не авторизован
+
+/password/:
+    put:
+        description: Изменение email пользователя
+        securedBy: [cookie-auth]
+        queryParameters:
+            current_password:
+                description: Текущий пароль
+                type:        password
+                required:    true
+            password:
+                description: Новый пароль
+                type:        password
+                required:    true
+            password2:
+                description: Подтверждение нового пароля
+                type:        password
+                required:    true
+        responses:
+            200:
+                description:
+                    Данные успешно изменены
+            400:
+                description:
+                    Ошибка изменения данных
+                body:
+                    application/json:
+                        example: !include ../error.json
+            401:
+                description:
+                    Пользователь не авторизован
+
+/login/:
+    post:
+        description: Авторизация
+        queryParameters:
+            email:
+                description: Email пользователя
+                type:        string
+                required:    true
+            password:
+                description: Пароль
+                type:        password
+                required:    true
+            g-recaptcha-response:
+                description: Капча
+                type:        string
+                required:    true
+        responses:
+            200:
+                headers:
+                    Set-Cookie:
+                        type: string
+                        example: -
+                description:
+                    Успешная авторизация
+                body:
+                    application/json:
+                        example: {}
+            400:
+                description:
+                    Ошибка авторизации
+                body:
+                    application/json:
+                        example: !include ../error.json
+
+/activate/:
+    post:
+        description: Активирует и авторизует пользователя
+        queryParameters:
+            code:
+                description: Код активации аккаунта пользователя
+                type:        string
+                required:    true,
+                example:     'q8EBAPK96V6Jo87ascb8nKkhAMG6PMdIhUZrXw'
+        responses:
+            200:
+                description:
+                    code - Массив залов <br>
+                    id - ID зала <br>
+                    title - Наименование зала <br>
+                    plan - Полный путь до файл плана зала
+                body:
+                    application/json:
+                        example: !include halls.json
+            responses:
+                200:
+                    headers:
+                        Set-Cookie:
+                            type: string
+                            example: -
+                    description:
+                        Успешная активация и авторизация
+                    body:
+                        application/json:
+                            example: {}
+                400:
+                    description:
+                        Ошибка активация/авторизация
+                    body:
+                        application/json:
+                            example: !include ../error.json
+
+/logout/:
+    post:
+        description: Выход пользователя из аккаунта
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: {}
+
+/registration/:
+    post:
+        description: Регистрация
+        queryParameters:
+            email:
+                description: Email пользователя
+                type:        string
+                required:    true
+            password:
+                description: Пароль
+                type:        password
+                required:    true
+            password2:
+                description: Подтверждение пароля
+                type:        password
+                required:    true
+            user_name:
+                description: Ник
+                type:        string
+                required:    true,
+                example:     "nik"
+            user_phone:
+                description: Телефон
+                type:        string
+                required:    false
+                example:     "+71111111111"
+            user_bdate:
+                description: Дата рождения
+                type:        string
+                required:    false
+                example:     "01.02.2002"
+            user_last_name:
+                description: Фамилия
+                type:        string
+                required:    false
+                example:     "Кто-тов"
+            user_first_name:
+                description: Имя
+                type:        string
+                required:    false
+                example:     "Кто-то"
+            user_middle_name:
+                description: Отчество
+                type:        string
+                required:    false
+                example:     "Кто-то-вич"
+            user_gender:
+                description: Пол
+                type:        number
+                required:    true
+                example:     0
+            g-recaptcha-response:
+                description: Капча
+                type:        string
+                required:    true
+        responses:
+            200:
+                headers:
+                    Set-Cookie:
+                        type: string
+                        example: -
+                description:
+                    Успешная авторизация
+                body:
+                    application/json:
+                        example: {}
+            400:
+                description:
+                    Ошибка регистрации
+                body:
+                    application/json:
+                        example: !include ../error.json
+
+/forgot/:
+    post:
+        description: Выход пользователя из аккаунта
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: {}

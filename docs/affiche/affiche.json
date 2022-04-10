@@ -1,0 +1,63 @@
+{
+    "30.02.2020": [{
+        "minPrice": null,
+        "movie": {
+            "name": "Тролли. Мировой тур",
+            "filmbaseId": "1642",
+            "duration": "91",
+            "premiere": [{
+                    "date": "30.02.2020",
+                    "label": "IMAX 3D"
+                },
+                {
+                    "date": "30.02.2020",
+                    "label": "IMAX 2D"
+                },
+                {
+                    "date": "30.02.2020",
+                    "label": "3D"
+                },
+                {
+                    "date": "30.02.2020",
+                    "label": "2D"
+                }
+            ],
+            "mpaa": "6+",
+            "countryText": "США",
+            "genreText": "Комедия, Мультфильм, Мюзикл, Приключения, Семейный, Фэнтези",
+            "actorText": "Джастин Тимберлейк, Анна Кендрик, Джеймс Корден, Оззи Осборн, Рэйчел Блум, Андерсон Паак, Джордж Клинтон, Мэри Джей Блайдж, Келли Кларксон, Рон Фанчес",
+            "imagePathSmall": "https://tstbarguzin2.dev.nikolas.ru/upload/filmbase/posters/1642_sm_5235.jpg",
+            "imagePathMiddle": "https://tstbarguzin2.dev.nikolas.ru/upload/filmbase/posters/1642_mid_5235.jpg",
+            "imagePathBig": "https://tstbarguzin2.dev.nikolas.ru/upload/filmbase/posters/1642_big_5235.jpg",
+            "trailer": {
+                "lq": "http://mediaserver.etobilet.ru/upload/movie/trailer/mp4/Trolls2_TLR_original_filename_3662_7594_lq.mp4",
+                "hq": "http://mediaserver.etobilet.ru/upload/movie/trailer/mp4/Trolls2_TLR_original_filename_3662_7594_hq.mp4",
+                "image": "http://mediaserver.etobilet.ru/upload/movie/trailer/img/image_3662_4624.jpg"
+            }
+        }
+    }],
+    "01.03.2020": [{
+        "minPrice": 200,
+        "movie": {
+            "name": "Верю в любовь",
+            "filmbaseId": 1652,
+            "duration": "115",
+            "premiere": [{
+                "date": "30.02.2020",
+                "label": "2D"
+            }],
+            "mpaa": "12+",
+            "genreText": "Драма, Мелодрама, Музыка",
+            "countryText": "США",
+            "actorText": "Кей Джей Апа, Мелисса Роксбур, Бритт Робертсон, Эбигейл Ф. Коуэн, Нэйтан Парсонс, Гэри Синиз, Шенайя Твейн, Камерон Арнетт, Николас Бехтель, Таня Кристиансен",
+            "imagePathSmall": "https://tstbarguzin2.dev.nikolas.ru/upload/filmbase/posters/1652_sm_1320.jpg",
+            "imagePathMiddle": "https://tstbarguzin2.dev.nikolas.ru/upload/filmbase/posters/1652_mid_1320.jpg",
+            "imagePathBig": "https://tstbarguzin2.dev.nikolas.ru/upload/filmbase/posters/1652_big_1320.jpg",
+            "trailer": {
+                "lq": "http://mediaserver.etobilet.ru/upload/movie/trailer/mp4/BLV6_TLR_1_S_RU_original_filename_3670_4225_lq.mp4",
+                "hq": "http://mediaserver.etobilet.ru/upload/movie/trailer/mp4/BLV6_TLR_1_S_RU_original_filename_3670_4225_hq.mp4",
+                "image": "http://mediaserver.etobilet.ru/upload/movie/trailer/img/image_3670_6716.jpg"
+            }
+        }
+    }]
+}
